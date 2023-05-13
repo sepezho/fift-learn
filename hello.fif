@@ -1,0 +1,26 @@
+"Asm.fif" include
+"TonUtil.fif" include
+
+{ 6 12 + . } : simple_sum_num
+
+{ { "hello world!" type cr } 10 times } : ten_hw
+
+{ <b 24 32 u, 0 64 u, 1 Gram,
+  "EQA3azUJcnicaZYflOBy_rQhhwg79_bOy9mhXt5priuc1EuX" $>smca 2drop Addr, b>
+  2 boc+>B dup Bx. cr } : gen_ton_msg
+
+{ { 1 + dup 10 xor } { dup . cr } while } : to_ten
+
+ten_hw 
+simple_sum_num
+cr 
+gen_ton_msg
+0 to_ten
+
+// 1 2 xor .
+// { 1 0 rot { -rot over + swap rot 2dup >= } until drop } : fib-gtr
+// 1000 fib-gtr . .
+// 123 123 negate +  .
+// 1 0 and .
+// 100 1 + .
+// " " type
